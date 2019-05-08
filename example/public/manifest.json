@@ -1,0 +1,8 @@
+{
+  "short_name": "mc-react-components",
+  "name": "mc-react-components",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
