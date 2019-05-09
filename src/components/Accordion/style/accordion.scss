@@ -1,0 +1,10 @@
+.accordion{
+  min-width: 200px;
+  &.collapsed {
+    min-width: 1.875rem;
+    max-width: 1.875rem;
+  }
+
+  @import "accordion-item";
+
+}

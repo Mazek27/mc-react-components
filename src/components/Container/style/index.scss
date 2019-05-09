@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+
+  &.content {
+    border:1px solid black;
+  }
+  //border:1px solid black;
+  //border-bottom:none;
+
+  //&:nth-child(odd){
+  //  border-right:none;
+  //}
+  //
+  //&:nth-last-child(2), &:nth-last-child(2) ~ .child{
+  //  border-bottom:1px solid black
+  //}
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}

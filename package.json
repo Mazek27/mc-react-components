@@ -1,6 +1,6 @@
 {
   "name": "mc-react-components",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
   "author": "Mazek27",
   "license": "MIT",
@@ -28,6 +28,19 @@
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
+    "@sambego/storybook-state": "^1.3.4",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-centered": "^5.0.11",
+    "@storybook/addon-info": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-options": "^5.0.11",
+    "@storybook/addon-storyshots": "^5.0.11",
+    "@storybook/addon-storyshots-puppeteer": "^5.0.11",
+    "@storybook/addon-storysource": "^5.0.11",
+    "@storybook/addon-viewport": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/cli": "^5.0.11",
+    "@storybook/react": "^5.0.11",
     "@svgr/rollup": "^2.4.1",
     "@types/jest": "^23.1.5",
     "@types/react": "^16.3.13",
@@ -36,6 +49,7 @@
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
     "gh-pages": "^1.2.0",
+    "node-sass": "^4.12.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^2.16.0",
@@ -45,6 +59,7 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-url": "^1.4.0",
     "typescript": "^2.8.3"

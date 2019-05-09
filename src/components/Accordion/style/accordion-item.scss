@@ -1,0 +1,49 @@
+.accordion-item {
+  border: white 1px solid;
+  line-height: 0.625rem;
+
+  &:not(.mini){
+    a{
+      font-size: 0.625rem;
+      color: white;
+      user-select: none;
+    }
+
+    .title {
+      padding: 0.625rem; ;
+      display: flex;
+      justify-content: space-between !important;
+      background-color: #324f61;
+
+      .name {
+
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .content {
+      display: none;
+
+      &.expanded {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.mini {
+    padding: 0.625rem; ;
+    display: flex;
+    justify-content: space-between !important;
+    background-color: #324f61;
+
+    a{
+      font-size: 0.625rem;
+      color: white;
+      user-select: none;
+    }
+  }
+}
