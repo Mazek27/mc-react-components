@@ -1,5 +1,5 @@
 const path = require('path');
-const genDefaultConfig = require('../default.default.webpack.config.js')
+const genDefaultConfig = require('../default.webpack.config.js')
 const cssRule = genDefaultConfig.module.rules[0]
 module.exports = {
   ...genDefaultConfig,

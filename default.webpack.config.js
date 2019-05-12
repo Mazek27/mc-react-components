@@ -45,7 +45,10 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        use: ['ts-loader']
+        use: {
+          loader: 'ts-loader',
+          options: {}
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,

@@ -1,0 +1,86 @@
+@import'../../../Core/globalStyle';
+
+.toolbar{
+  position: absolute;
+  display: flex;
+
+  &.top, &.bottom {
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+  }
+
+  &.left, &.right {
+    flex-direction: column;
+    width: 40px;
+    height: 100%;
+  }
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+  }
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+
+  .toolbarGroup {
+    &:first-child:last-child {
+      margin: 0 0 0 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    margin: 20px 0 30px 0;
+
+    &:last-child {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    .toolbarItem{
+      user-select: none;
+      position: relative;
+      background-color: #38598b;
+      width: 40px;
+      height: 40px;
+      color: white;
+
+      &.selected {
+        background-color: $selectedItem;
+      }
+
+      &.disabled {
+        background-color: lightgray;
+        color: darkgray;
+      }
+
+      &:hover:not(.selected) {
+        background-color: $hoverItem;
+      }
+
+      &:first-child:last-child {
+        margin: 0 0 0 0;
+      }
+
+      &:first-child {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      margin: 5px 0 5px 0;
+
+      &:last-child {
+        margin-top: 5px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

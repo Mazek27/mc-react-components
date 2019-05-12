@@ -1,8 +1,8 @@
 import {storiesOf} from "@storybook/react";
 import * as React from "react";
-import {Accordion} from "./index";
-import {AccordionItem} from "./AccordionItem";
-import {Centered} from "../Centered";
+import Accordion from "./Accordion";
+import AccordionItem from "./AccordionItem";
+import Centered from "../Centered/Centered";
 import {useState} from "react";
 
 const stories = storiesOf('Components/Accordion', module);
