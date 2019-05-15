@@ -6,6 +6,6 @@ const stories = storiesOf('Components', module);
 
 stories.add(
   'SideBar',
-  () => <SideBar/>,
+  () => <SideBar isOpen={true} onClose={()=> {}}/>,
   {}
 );

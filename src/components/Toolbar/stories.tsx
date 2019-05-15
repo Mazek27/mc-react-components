@@ -8,38 +8,29 @@ const stories = storiesOf('Components/Toolbar', module);
 
 stories.add(
   'Left',
-  () => <Toolbar position={"left"}/>,
+  () => <Toolbar position={"left"} onClickItem={()=> {}} onSelectItem={()=> {}}/>,
   {}
 );
-stories.add(
-  'Right',
-  () => <Toolbar position={"right"}/>,
-  {}
-);
-stories.add(
-  'Top',
-  () => <Toolbar position={"top"}/>,
-  {}
-);
+
 stories.add(
   'Bottom',
-  () => <Toolbar position={"bottom"}/>,
+  () => <Toolbar position={"bottom"} onClickItem={()=> {}} onSelectItem={()=> {}}/>,
   {}
 );
 
 stories.add(
   'With Items',
-  () => <Toolbar position={"left"}>
+  () => <Toolbar position={"left"}  onClickItem={()=> {}} onSelectItem={()=> {}}>
     <ToolbarGroup>
-      <ToolbarItem itemCn={'pan'}/>
-      <ToolbarItem itemCn={'fullScreen'}/>
+      <ToolbarItem itemCn={'pan'} type={"mode"}/>
+      <ToolbarItem itemCn={'fullScreen'} type={"mode"}/>
     </ToolbarGroup>
     <ToolbarGroup>
-      <ToolbarItem itemCn={'config'}/>
-      <ToolbarItem itemCn={'savePhoto'}/>
+      <ToolbarItem itemCn={'config'} type={"mode"}/>
+      <ToolbarItem itemCn={'savePhoto'} type={"mode"}/>
     </ToolbarGroup>
     <ToolbarGroup>
-      <ToolbarItem itemCn={'synchronize'}/>
+      <ToolbarItem itemCn={'synchronize'} type={"mode"}/>
     </ToolbarGroup>
   </Toolbar>,
   {}

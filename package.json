@@ -30,6 +30,7 @@
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
+    "react-icons": "^3.7.0",
     "postcss-preset-env": "^6.6.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
