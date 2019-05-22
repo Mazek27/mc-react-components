@@ -13,7 +13,7 @@ const initialState = () => ({
   }
 });
 
-export const Module = () => {
+const Module = () => {
 
   const [state, dispatch] = useReducer(reducer, {}, initialState);
 
@@ -35,3 +35,5 @@ export const Module = () => {
     </div>
   )
 }
+
+export default Module;
