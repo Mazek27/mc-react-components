@@ -7,6 +7,11 @@ import Input from "./components/Input/Input"
 import Container from "./components/Container/Container"
 import Select from "./components/Select/Select"
 import Portal from "./components/Portal/Portal";
+import Loading from "./components/Loading/Loading";
+import Module from "./components/Module/Module";
+import ToolbarItem from "./components/Toolbar/ToolbarItem";
+import ToolbarGroup from "./components/Toolbar/ToolbarGroup";
+import Toolbar from "./components/Toolbar/Toolbar";
 
 
 export {
@@ -18,5 +23,10 @@ export {
   Input,
   Container,
   Select,
-  Portal
+  Portal,
+  Loading,
+  Module,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem
 }
