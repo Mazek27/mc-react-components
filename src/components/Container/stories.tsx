@@ -1,7 +1,7 @@
 import {storiesOf} from "@storybook/react";
 import * as React from "react";
 import Container from "./Container";
-import {Module} from "../Module/Module";
+import Module from "../Module/Module";
 
 const stories = storiesOf('Components', module);
 

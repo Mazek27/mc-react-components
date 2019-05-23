@@ -7,10 +7,11 @@ import "./style/index.scss";
 export interface IContainerProps extends IProps{
   size?: number;
   direction?: FlexDirectionProperty
+  withBorder?: boolean
 }
 
 const Container : FunctionComponent<IContainerProps> = (props) => {
-  return <div className={`container ${!hasContainerChildren(props.children) ? 'content' : ''}` } style={{
+  return <div className={`container ${!hasContainerChildren(props.children) && props.withBorder ? 'content' : ''}` } style={{
     flex: props.size || 1,
     flexDirection: props.direction || "column"}}>
     {props.children}
