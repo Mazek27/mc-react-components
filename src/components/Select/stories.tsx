@@ -8,12 +8,7 @@ const stories = storiesOf('Components', module);
 stories.add(
 
   'Select',
-  () => {
-    const itemDidSelected = () => {
-    }
-    
-    return (<div >
-      <Select style={{margin: "200px", width: "500px"}} itemDiDSelected= {itemDidSelected} items={[{ value: 1, label: "Test1" }, { value: 2, label: "Test2" }]} />
-    </div> )
-  });
+  () => (
+    <Select style={{margin: "200px", width: "500px"}} itemDiDSelected= {()=>{}} items={[{ value: 1, label: "Test1" }, { value: 2, label: "Test2" }]} />
+  ));
 

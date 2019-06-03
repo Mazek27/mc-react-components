@@ -4,9 +4,10 @@ import { IItemListProps, Item } from "./common/props"
 import Portal from "../Portal/Portal";
 import "./style/index.scss"
 import ClickOutsideComponent from "../../hoc/ClickOutsideComponent/ClickOutsideComponent";
+// import ClickOutsideComponent from "../../hoc/ClickOutsideComponent/ClickOutsideComponent";
 
 
-const Select = <T extends any>(props: IItemListProps<T>) => {
+const Select = React.forwardRef(<T extends any>(props: IItemListProps<T>, ref: any) => {
 
   const [isDisplay, setDisplay] = React.useState(false);
   const [activeElement, setActiveElement] = React.useState<T | undefined>(undefined);
@@ -15,21 +16,28 @@ const Select = <T extends any>(props: IItemListProps<T>) => {
   const node = useRef<HTMLInputElement>(null);
 
 
-  // const handleClickOutSide = (e: any) => {
-  //   if (node.current != null && node.current.contains(e.target) || (listRef != null && listRef.current && listRef.current.contains(e.target))) {
-  //     return;
-  //   }
-   
-  // };
+  const handleClickOutside = (e: any) => {
+    if (node.current != null && node.current.contains(e.target) || (listRef != null && listRef.current && listRef.current.contains(e.target))) {
+      return;
+    }
+    setDisplay(false)
+  };
 
   React.useEffect(() => {
-    setDisplay(false);
-   
-    // document.addEventListener("mousedown", handleClickOutSide);
-    return () => {
-      // document.removeEventListener("mousedown", handleClickOutSide);
-    };
+    if(ref) {
+      ref.current = node.current
+    }
   }, [])
+
+  // React.useEffect(()=> {
+  //   if(isDisplay){
+  //     document.addEventListener("mousedown", handleClickOutSide);
+  //   } else {
+  //     document.removeEventListener("mousedown", handleClickOutSide);
+  //   }
+  // }, [isDisplay])
+
+
 
   const inputSelectHandle = (): void => {
     setDisplay(true);
@@ -49,45 +57,31 @@ const Select = <T extends any>(props: IItemListProps<T>) => {
     });
 
     return result;
-  }
+  };
 
 
-  Select.prototype.handleClickOutside = () => {
-    setDisplay(false)
-  }
-
-  // const createContainerForList = (): void => {
-
-  //   let element = document.createElement('div');
-  //   element.style.position = "absolute";
-  //   if (node.current) {
-  //     let position = node.current.getBoundingClientRect();
-  //     element.style.left = position.left + "px";
-  //     element.style.top = position.top + position.height + "px";
-  //     element.style.width = position.width + "px";
-  //   }
-  //   document.body.appendChild(element);
-  //   if (!listRef.current)
-  //     listRef.current = element;
-
+  // Select.prototype.handleClickOutside = () => {
+  //   setDisplay(false)
   // }
 
   let items = props.items.map((element: Item<any>, index: number) => {
     return <li onClick={(event) => elementClickHandle(event)} className={`select list ${element.value == activeElement ? ' active' : 'select list'}`} value={element.value} key={index}>{element.label}</li>
   });
 
-  return <div className={`select`} style={props.style}>
-    <input readOnly ref={node} onSelect={inputSelectHandle} value={getCaptionByVale(activeElement)} className={`select input`} type="text" />
-    <Portal ref={listRef} position={node.current ? node.current.getBoundingClientRect() : null} isDisplay={isDisplay}>
-      <ul className={`select list`}>
-        {items}
-      </ul>
-    </Portal>
-  </div>
-}
+  return (
+    <ClickOutsideComponent handle={handleClickOutside} shouldListen={isDisplay}>
+      <div className={`select`} style={props.style}>
+        <input readOnly ref={node} onSelect={inputSelectHandle} value={getCaptionByVale(activeElement)} className={`select input`} type="text" />
+        <Portal ref={listRef} position={node.current ? node.current.getBoundingClientRect() : null} isDisplay={isDisplay}>
+          <ul className={`select list`}>
+            {items}
+          </ul>
+        </Portal>
+      </div>
+  </ClickOutsideComponent>
+  )
+});
 
-let handleClickOutside = () =>{
-  Select.prototype.handleClickOutside();
-}
+export default Select;
 
-export default ClickOutsideComponent(Select, handleClickOutside);
+// export default ClickOutsideComponent(Select, ()=> {}/*handleClickOutside*/);

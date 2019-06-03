@@ -20,6 +20,7 @@ const Portal: React.FC<IPortalProps> = React.forwardRef((props, ref : React.Muta
         document.body.removeChild(refLocal.current);
     }
   }, [])
+
   const createContainerForPortal = (): void => {
     const element = document.createElement('div');
     element.style.position = "absolute";
