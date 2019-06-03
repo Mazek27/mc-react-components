@@ -13,7 +13,7 @@ stories.add(
     }
     
     return (<div >
-      <Select<number> style={{margin: "200px", width: "500px"}} itemDiDSelected= {itemDidSelected} items={[{ value: 1, label: "Test1" }, { value: 2, label: "Test2" }]} />
+      <Select style={{margin: "200px", width: "500px"}} itemDiDSelected= {itemDidSelected} items={[{ value: 1, label: "Test1" }, { value: 2, label: "Test2" }]} />
     </div> )
   });
 
