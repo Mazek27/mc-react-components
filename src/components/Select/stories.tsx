@@ -9,14 +9,11 @@ stories.add(
 
   'Select',
   () => {
-    // let style : React.CSSProperties ={
-    //   width: "20px"
-    // }
-    let itemDidSelected = (item: any) =>{
-      console.log(item);
+    const itemDidSelected = () => {
     }
-    return (<div style={{ width: "500px" }}>
-      <Select<number> itemDiDSelected= {itemDidSelected} items={[{ value: 1, label: "Test1" }, { value: 2, label: "Test2" }]} />
+    
+    return (<div >
+      <Select<number> style={{margin: "200px", width: "500px"}} itemDiDSelected= {itemDidSelected} items={[{ value: 1, label: "Test1" }, { value: 2, label: "Test2" }]} />
     </div> )
   });
 

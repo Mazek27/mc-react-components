@@ -1,0 +1,22 @@
+@import "../../../Core/globalStyle";
+
+.select {
+    
+    cursor: default;
+
+    &.input {
+        width: 100%;
+    }
+
+    &.list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: "auto";
+    border: "solid  1px #c6c4c4";
+    
+        &.active{
+        background-color: grey;
+        }
+    }   
+}
