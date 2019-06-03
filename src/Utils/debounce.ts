@@ -1,7 +1,6 @@
-export function debounce(fn :any, delay: any) {
-  let timerId: any;
-  //@ts-ignore
-  return function (...args) {
+export function debounce(fn :any, delay: number) {
+  let timerId: number | null;
+  return function (...args : any[]) {
     if (timerId) {
       clearTimeout(timerId);
     }
