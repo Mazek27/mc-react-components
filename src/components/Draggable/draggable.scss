@@ -1,0 +1,86 @@
+@import "../../Core/variables";
+@import "../../Core/coreColors";
+
+$pt-intent-primary: $blue3 !default;
+
+// Z-indices
+$pt-z-index-base: 0 !default;
+$pt-z-index-content: $pt-z-index-base + 10 !default;
+$pt-z-index-overlay: $pt-z-index-content + 10 !default;
+
+$cell-border-width : 1px !default;
+$resize-handle-target-width: 5px !default;
+$resize-handle-width: 3px !default;
+$resize-handle-position-correction: -3px !default;
+$resize-handle-padding: 2px !default;
+$resize-handle-color: $pt-intent-primary !default;
+$resize-handle-dragging-color: $pt-intent-primary !default;
+
+// Resizing
+$resize-vertical-cursor: ew-resize !default;
+$resize-horizontal-cursor: ns-resize !default;
+
+.#{$ns}-resize-handle-target {
+  position: absolute;
+  opacity: 0;
+  // Move the handle target above the following cell
+  // this allows the mouse to hover the target on both
+  // sides when the mouse is within the padding distance
+  z-index: $pt-z-index-overlay;
+  user-select: none;
+
+  &:hover,
+  &.#{$ns}-dragging {
+    opacity: 1;
+  }
+
+  &.#{$ns}-resize-vertical {
+    top: 0;
+    right: 0;
+    bottom: -$cell-border-width;
+    cursor: $resize-vertical-cursor;
+    width: $resize-handle-target-width;
+  }
+
+  &.#{$ns}-resize-horizontal {
+    right: -$cell-border-width;
+    bottom: 0;
+    left: 0;
+    cursor: $resize-horizontal-cursor;
+    height: $resize-handle-target-width;
+  }
+}
+
+.#{$ns}-resize-handle {
+  position: absolute;
+  z-index: $pt-z-index-overlay;
+  background-color: $resize-handle-color;
+
+  &.#{$ns}-dragging {
+    background-color: $resize-handle-dragging-color;
+  }
+}
+
+.#{$ns}-resize-vertical .#{$ns}-resize-handle {
+  top: 0;
+  bottom: 0;
+  left: $resize-handle-padding;
+  width: $resize-handle-width;
+}
+
+.#{$ns}-resize-horizontal .#{$ns}-resize-handle {
+  top: $resize-handle-padding;
+  right: 0;
+  left: 0;
+  height: $resize-handle-width;
+}
+
+.#{$ns}-resize-guides .#{$ns}-horizontal-guide {
+  margin-top: $resize-handle-position-correction;
+  background-color: $resize-handle-dragging-color;
+  height: $resize-handle-width;
+
+  &.#{$ns}-horizontal-guide-flush-top {
+    margin-top: 0;
+  }
+}
