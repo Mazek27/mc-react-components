@@ -1,8 +1,9 @@
-import { ILockableLayout, Orientation, ResizeHandle } from "./ResizeHandle";
+import { ILockableLayout, ResizeHandle } from "./ResizeHandle";
 import {IProps} from "../../Core/props";
 import * as React from "react";
-import {FC, useEffect, useState} from "react";
+import {FC} from "react";
 import "./draggable.scss"
+import {Orientation} from "../../Utils/variables";
 
 export type IIndexedResizeCallback = (index: number, size: number) => void;
 
@@ -20,25 +21,19 @@ export interface IResizableProps extends IProps, ILockableLayout {
 
 export const clamp = (value: number, min?: number, max?: number): number => {
   if (min != null && value < min) {
+    console.log("min" , value);
     value = min;
   }
   if (max != null && value > max) {
+    console.log("max" , value);
     value = max;
   }
   return value;
 }
 
-export const Resizable: FC<IResizableProps> = (props) => {
-  const [size, setSize] = useState(props.size)
-  const [unclampedSize, setUnclampedSize] = useState(props.size)
-
-
-  const child = React.Children.only(props.children);
-
-  useEffect(()=> {
-    setSize(props.size)
-    setUnclampedSize(props.size)
-  })
+export const Resizable: FC<IResizableProps> = React.memo((props) => {
+  let size = props.size
+  let unclampedSize = size
 
   function getStyle(): React.CSSProperties {
     if (props.orientation === Orientation.VERTICAL) {
@@ -49,7 +44,7 @@ export const Resizable: FC<IResizableProps> = (props) => {
       };
     } else {
       return {
-        flexBasis: `${size}px`,
+        flexBasis: `100%`,
         height: `${size}px`,
         minHeight: "0px",
       };
@@ -59,12 +54,13 @@ export const Resizable: FC<IResizableProps> = (props) => {
   const onResizeMove = (_offset: number, delta: number) => {
     offsetSize(delta);
     if (props.onSizeChanged) {
+
       props.onSizeChanged(size);
     }
   };
 
   const onResizeEnd = (_offset: number) => {
-    setUnclampedSize(size);
+    unclampedSize =size
 
     if (props.onResizeEnd != null) {
       props.onResizeEnd(size);
@@ -72,8 +68,9 @@ export const Resizable: FC<IResizableProps> = (props) => {
   };
 
   const offsetSize = (offset: number) => {
-    setSize(clamp(unclampedSize + offset, props.minSize, props.maxSize))
-    setUnclampedSize(unclampedSize + offset)
+    let updatedSize = unclampedSize + offset
+    size = clamp(updatedSize, props.minSize, props.maxSize)
+    unclampedSize = updatedSize
   }
 
 
@@ -92,6 +89,7 @@ export const Resizable: FC<IResizableProps> = (props) => {
     );
   }
 
+  const child = React.Children.only(props.children);
   const style = { ...child.props.style, ...getStyle() };
 
   if (props.isResizable === false) {
@@ -100,4 +98,5 @@ export const Resizable: FC<IResizableProps> = (props) => {
 
   const resizeHandle = renderResizeHandle();
   return React.cloneElement(child, { style, resizeHandle });
-}
+})
+

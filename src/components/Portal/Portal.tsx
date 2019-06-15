@@ -46,11 +46,11 @@ const Portal: React.FC<IPortalProps> = React.forwardRef((props, ref : React.Muta
   
   }
 
-  if (!ref.current) {
+  if (ref && !ref.current) {
     ref.current = refLocal.current;
   }
 
-  if (props.isDisplay && ref.current) {
+  if (props.isDisplay && ref && ref.current) {
     return createPortal(props.children, ref.current)
   } else {
     return null;

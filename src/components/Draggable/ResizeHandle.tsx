@@ -4,11 +4,9 @@ import classNames from "classnames"
 import * as Classes from "./common/classes";
 import {Draggable, ICoordinateData} from "./Draggable";
 import * as React from "react";
+import {Orientation} from "../../Utils/variables";
 
-export enum Orientation {
-  HORIZONTAL = 1,
-  VERTICAL = 0,
-}
+
 
 export interface ILockableLayout {
   onLayoutLock: (isLayoutLocked?: boolean) => void;

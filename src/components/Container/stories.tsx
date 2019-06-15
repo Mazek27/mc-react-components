@@ -10,10 +10,10 @@ stories.add(
   () =>(
     <div style={{position: "absolute", width: "100%", height: "100%"}}>
       <Container direction={"column"}>
-        <Container>
+        <Container withBorder>
           <Module/>
         </Container>
-        <Container>
+        <Container withBorder>
           <Module/>
         </Container>
       </Container>
