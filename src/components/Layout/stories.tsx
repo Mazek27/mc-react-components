@@ -19,7 +19,7 @@ stories.add(
 stories.add(
   'Horizontal',
   () =>(
-    <Layout orientation={Orientation.HORIZONTAL} secondaryInitialSize={50} unit={"%"}>
+    <Layout orientation={Orientation.HORIZONTAL} secondaryInitialSize={50} unit={"%"} primaryMinSize={10} secondaryMinSize={10}>
       <div style={{backgroundColor: "red", width: "100%", height: "100%"}}/>
       <div style={{backgroundColor: "green", width: "100%", height: "100%"}}/>
     </Layout>

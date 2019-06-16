@@ -50,14 +50,11 @@ export const Layout : FC<ILayoutProps>= (props) => {
       totalSize = 100;
     }
 
-
-
     if (props.primaryMinSize && primaryPaneSize < props.primaryMinSize) {
-      secondPaneSize = Math.max(secondaryPaneSize - (props.primaryMinSize - primaryPaneSize), 0);
-    } else if (props.primaryMinSize && props.secondaryMinSize && secondaryPaneSize < props.secondaryMinSize) {
+      secondPaneSize = Math.max(secondPaneSize - (props.primaryMinSize - primaryPaneSize), 0);
+    } else if (props.primaryMinSize && props.secondaryMinSize && secondPaneSize < props.secondaryMinSize) {
       secondPaneSize = Math.min(totalSize - handlerSize - props.primaryMinSize, props.secondaryMinSize);
     }
-
 
     return secondPaneSize;
   };
