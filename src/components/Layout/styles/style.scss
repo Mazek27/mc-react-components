@@ -1,0 +1,48 @@
+@import "../../../Core/variables";
+@import "../../../Core/variableColors";
+
+.#{$ns}-layout {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .#{$ns}-layout-pane {
+    position: relative;
+    flex: 0 0 auto;
+    overflow: auto;
+
+    &.#{$ns}-layout-pane-primary {
+      flex: 1 1 auto;
+    }
+  }
+
+  .#{$ns}-layout-handler {
+    flex: 0 0 auto;
+    width: 4px;
+    height: 100%;
+    cursor: col-resize;
+    background-color: $layout-handler;
+
+    &:hover{
+      background-color: $layout-handler-hover;
+    }
+  }
+
+  &.#{$ns}-horizontal {
+    flex-direction: row;
+  }
+
+  &.#{$ns}-vertical {
+    flex-direction: column;
+
+    > .#{$ns}-layout-handler {
+      width: 100%;
+      height: 4px;
+      cursor: row-resize;
+    }
+  }
+
+}
