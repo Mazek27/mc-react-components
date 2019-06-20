@@ -12,7 +12,7 @@ const ToolbarItem : React.FC<IToolbarItemProps> = (props) => {
   const context = useContext(ToolboxContext);
   let selectedItemCn = context && context.selectedItem;
 
-  const Icon = React.lazy(()=> import(`../../Core/Icons/${props.itemCn}Icon`));
+  // const Icon = React.lazy(()=> import(`../../Core/Icons/${props.itemCn}Icon`));
 
   return useMemo(() =>  context &&
     <div
@@ -26,7 +26,7 @@ const ToolbarItem : React.FC<IToolbarItemProps> = (props) => {
       }}
       className={`toolbarItem ${props.itemCn === selectedItemCn ? 'selected': ''} ${context.isDisabled(props.itemCn) ? 'disabled' : ''}`}
 
-    ><Suspense fallback={""}><Icon className={'icon'}/></Suspense></div>
+    ><Suspense fallback={""}>{/*<Icon className={'icon'}/>*/}</Suspense></div>
   , [selectedItemCn])
 }
 
