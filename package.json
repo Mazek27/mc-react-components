@@ -1,6 +1,6 @@
 {
   "name": "mc-react-components",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "author": "Mazek27",
   "license": "MIT",
@@ -22,7 +22,6 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
-    "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
     "build-storybook": "build-storybook -c .storybook -o docs --no-dll"
   },
   "dependencies": {},

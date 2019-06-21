@@ -23,10 +23,10 @@ const Module = () => {
       <div className={`content`}>
         <Toolbar position={"left"} onClickItem={itemCn=> dispatch({type:`CLICK_${itemCn.toUpperCase()}`})} onSelectItem={()=> {}}>
           <ToolbarGroup>
-            <ToolbarItem itemCn={'module'} type={"immediate"}/>
+            <ToolbarItem itemCn={'Module'} type={"immediate"}/>
           </ToolbarGroup>
           <ToolbarGroup>
-            <ToolbarItem itemCn={'settings'} type={"immediate"}/>
+            <ToolbarItem itemCn={'Settings'} type={"immediate"}/>
           </ToolbarGroup>
         </Toolbar>
         <Toolbar position={"right"} onClickItem={()=> {}} onSelectItem={()=> {}}/>

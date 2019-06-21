@@ -11,7 +11,7 @@ interface IPaneProps {
   orientation: Orientation
 }
 
-export const Pane :FC<IPaneProps> = (props) => {
+const Pane :FC<IPaneProps> = (props) => {
   let classes = classNames(LAYOUT_PANE,
     {
       [LAYOUT_PANE_PRIMARY] : props.primary
@@ -30,3 +30,5 @@ export const Pane :FC<IPaneProps> = (props) => {
   const styles = getStyle()
   return <div className={classes} style={styles}>{props.children}</div>
 }
+
+export default Pane

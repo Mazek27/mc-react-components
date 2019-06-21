@@ -4,7 +4,7 @@ import * as classNames from "classnames";
 import {IProps} from "../../Core/props";
 import {Orientation} from "../../Utils/variables";
 import {LAYOUT, LAYOUT_HANDLER, LAYOUT_HORIZONTAL, LAYOUT_VERTICAL} from "./common/Classes";
-import {Pane} from "./Pane";
+import Pane from "./Pane";
 import "./styles/style.scss"
 
 interface ILayoutProps extends IProps{
@@ -16,7 +16,7 @@ interface ILayoutProps extends IProps{
   secondaryMinSize?: number
 }
 
-export const Layout : FC<ILayoutProps>= (props) => {
+const Layout : FC<ILayoutProps>= (props) => {
   const handlerRef = useRef<HTMLDivElement>(null);
   const layoutRef = useRef<HTMLDivElement>(null);
   const [secondaryPaneSize, updateSecondaryPaneSize] = useState(props.secondaryInitialSize ? props.secondaryInitialSize : 0);
@@ -146,3 +146,5 @@ export const Layout : FC<ILayoutProps>= (props) => {
     </div>
   )
 }
+
+export default Layout

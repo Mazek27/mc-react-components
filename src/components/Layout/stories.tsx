@@ -1,6 +1,6 @@
 import {storiesOf} from "@storybook/react";
 import * as React from "react";
-import {Layout} from "./Layout";
+import Layout from "./Layout";
 import {Orientation} from "../../Utils/variables";
 import "./styles/style.scss"
 

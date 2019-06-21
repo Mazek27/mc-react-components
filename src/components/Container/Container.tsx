@@ -11,7 +11,7 @@ export interface IContainerProps extends IProps{
 }
 
 const Container : FunctionComponent<IContainerProps> = (props) => {
-  return <div className={`container ${!hasContainerChildren(props.children) && props.withBorder ? 'content' : ''}` } style={{
+  return <div className={`container ${!hasContainerChildren(props.children) && props.withBorder ? 'content' : ''} ${props.className || ""}` } style={{
     flex: props.size || 1,
     flexDirection: props.direction || "column"}}>
     {props.children}
