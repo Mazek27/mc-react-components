@@ -12,8 +12,8 @@ import Module from "./components/Module/Module";
 import ToolbarItem from "./components/Toolbar/ToolbarItem";
 import ToolbarGroup from "./components/Toolbar/ToolbarGroup";
 import Toolbar from "./components/Toolbar/Toolbar";
-import {Layout} from "./components/Layout/Layout";
-import {Pane} from "./components/Layout/Pane";
+import Layout from "./components/Layout/Layout";
+import Pane from "./components/Layout/Pane";
 
 
 export {
