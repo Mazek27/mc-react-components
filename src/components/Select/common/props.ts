@@ -1,15 +1,19 @@
 import {IProps} from "../../../Core/props";
+import { IIconProps } from "../../Icon/Icon";
 
 export interface IItemListProps<T> extends IProps{
   activeItem?: any,
-  items: Item<T>[],
+  items: T[],
+  itemRenderer?: any,
+  headerRenderer?: any,
   styleCSS? : React.CSSProperties | undefined,
   itemDiDSelected(item : T) : void 
-  style: any
+  searchComparator: any
+  style?: any
 }
 
-export interface Item<T> {
+export interface IItem<T> {
   value: T;
-  label: string
+  icon?: IIconProps;
 }
 

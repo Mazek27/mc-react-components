@@ -4,19 +4,23 @@
     
     cursor: default;
 
-    &.input {
-        width: 100%;
-    }
-
     &.list{
     list-style-type: none;
     padding: 0;
     margin: 0;
     width: "auto";
-    border: "solid  1px #c6c4c4";
-    
-        &.active{
-        background-color: grey;
+    border-radius: 5px;
+    border: solid  1px #c6c4c4;
+    background-color: white;
+
+        li{
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: white;
+          margin: 2px;
+          &.active{
+            background-color: grey;
+          }
         }
     }   
 }

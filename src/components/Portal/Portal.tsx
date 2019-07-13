@@ -7,6 +7,7 @@ interface IPortalProps extends React.ClassAttributes<HTMLDivElement> {
   position?: ClientRect | DOMRect | null | undefined
   isDisplay: boolean
   margin?: number
+  element? :any
 }
 
 const Portal: React.FC<IPortalProps> = React.forwardRef((props, ref : React.MutableRefObject<HTMLDivElement | null>) => {

@@ -7,7 +7,7 @@ import Input from "./components/Input/Input"
 import Container from "./components/Container/Container"
 import Select from "./components/Select/Select"
 import Portal from "./components/Portal/Portal";
-
+import ItemsContainer from "./components/ItemsContainer/ItemsContainers"
 
 export {
   Centered,
@@ -18,5 +18,7 @@ export {
   Input,
   Container,
   Select,
-  Portal
+  Portal,
+  ItemsContainer
+
 }

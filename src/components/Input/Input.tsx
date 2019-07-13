@@ -1,24 +1,25 @@
-import {FunctionComponent} from "react";
-import {IProps} from "../../Core/props";
+import { FunctionComponent } from "react";
+import { IProps } from "../../Core/props";
 import * as React from "react";
-import {debounce} from "../../Utils/debounce";
+import "./style/index.scss"
+import Icon, { IconType } from "../Icon/Icon"
 
-interface IInputProps extends IProps{
-  controlled?: boolean
-  onChange: (newValue: string) => void
+interface IInputProps extends IProps, React.InputHTMLAttributes<HTMLInputElement>, React.ClassAttributes<HTMLInputElement> {
+  icon?: String
+  itemRenderer?: any
+  onChange?: any
 }
 
-const Input : FunctionComponent<IInputProps> = (props) => {
-  const onChange = debounce(props.onChange, 1000);
+const Input: FunctionComponent<IInputProps> = React.forwardRef((props, ref: React.MutableRefObject<HTMLDivElement | null>) => {
+  let icon = props.icon ?
+    <Icon className={`icon`} style={{ width: 15, height: 15, margin: "3" }} type={"SVG"} /> : null;
 
-  return (
-    <input onChange={(event) => {
-      event.persist();
-      onChange(event.target.value)
-    }
-    }/>
-  )
-};
+  return <div onSelect={props.onSelect} ref={ref} tabIndex={1} className={`inputComponent ${props.className? props.className : ''} ${props.readOnly ? 'readonly' : ''}`} style={props.style} >
+    {icon}
+      <input onChange={props.onChange} readOnly={props.readOnly} className={props.readOnly ? 'readonly' : ''} value={props.value} /> 
+       {/* <div>{props.itemRenderer ? props.itemRenderer(props.value) : props.value.toString()}</div> */}
+  </div>
+});
 
 export default Input;
 

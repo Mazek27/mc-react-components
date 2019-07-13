@@ -1,0 +1,40 @@
+.itemsContainer {
+    height: auto;
+    display: flex;
+    border: 1px solid #cececf;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    &item{
+        display: flex;
+        border: 1px solid #a3a3a3;
+        border-radius: 5px;
+        background-color: #b0b0b38e;
+        padding: 4px;
+        margin: 4px;
+        font-size: 15px;
+        line-height: 16px;
+    }
+    &noItems{
+        color: #d6d4d4ee;
+        margin: auto 4px;
+    }
+
+    .icon{
+        svg{
+            fill: #757474;
+    
+            &:hover{
+                fill: #494848;
+            }
+        }
+    
+    }
+    
+    .input{
+        border: none;
+        height: auto;
+        line-height: 16px;
+        font-size: 15px;    
+    }
+}
+

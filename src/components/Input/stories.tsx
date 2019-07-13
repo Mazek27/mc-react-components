@@ -8,12 +8,10 @@ const stories = storiesOf('Components/Input', module);
 const WrappedInput = () => {
   const [text, changeText] = useState("");
 
-  return (
-    <>
-      <a>{text}</a>
-      <Input onChange={changeText} />
-    </>
-  )
+  return <div style={{width: "500px"}}>
+      <Input icon={"icon"}  /> 
+    </div>
+  
 }
 
 stories.add(
