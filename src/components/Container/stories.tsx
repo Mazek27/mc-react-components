@@ -1,7 +1,7 @@
 import {storiesOf} from "@storybook/react";
 import * as React from "react";
 import Container from "./Container";
-import Module from "../Module/Module";
+import Card from "../Card/Card";
 
 const stories = storiesOf('Components', module);
 
@@ -11,10 +11,17 @@ stories.add(
     <div style={{position: "absolute", width: "100%", height: "100%"}}>
       <Container direction={"column"}>
         <Container withBorder>
-          <Module/>
+          <Card/>
         </Container>
         <Container withBorder>
-          <Module/>
+          <Container withBorder>
+            <Container withBorder/>
+            <Container withBorder/>
+            <Container withBorder/>
+            <Container withBorder/>
+            <Card/>
+          </Container>
+          <Card/>
         </Container>
       </Container>
     </div>

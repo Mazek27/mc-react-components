@@ -1,6 +1,6 @@
 {
   "name": "mc-react-components",
-  "version": "1.0.14",
+  "version": "1.0.17",
   "description": "",
   "author": "Mazek27",
   "license": "MIT",
@@ -8,7 +8,9 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -24,19 +26,15 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o docs --no-dll"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rollup-plugin-multi-input": "^1.0.0"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "react-icons": "^3.7.0",
-    "postcss-preset-env": "^6.6.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-runtime": "^6.26.0",
-    "copy-webpack-plugin": "^5.0.3",
     "@sambego/storybook-state": "^1.3.4",
     "@storybook/addon-actions": "^5.1.8",
     "@storybook/addon-centered": "^5.1.8",
@@ -50,23 +48,29 @@
     "@storybook/addons": "^5.1.8",
     "@storybook/cli": "^5.1.8",
     "@storybook/react": "^5.1.8",
-    "@types/storybook__addon-actions": "^3.4.2",
-    "@types/storybook__react": "^4.0.1",
-    "@types/styled-components": "^4.1.14",
     "@svgr/rollup": "^2.4.1",
+    "@types/classnames": "^2.2.8",
     "@types/jest": "^23.1.5",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
+    "@types/storybook__addon-actions": "^3.4.2",
+    "@types/storybook__react": "^4.0.1",
+    "@types/styled-components": "^4.1.14",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-runtime": "^6.26.0",
+    "classnames": "^2.2.6",
+    "copy-webpack-plugin": "^5.0.3",
     "cross-env": "^5.1.4",
     "gh-pages": "^1.2.0",
     "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
+    "postcss-preset-env": "^6.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
     "react-scripts-ts": "^2.16.0",
     "rollup": "^0.62.0",
-    "ts-loader": "^6.0.0",
-    "awesome-typescript-loader": "^5.2.1",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-node-resolve": "^3.3.0",
@@ -75,8 +79,8 @@
     "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-url": "^1.4.0",
-    "classnames": "^2.2.6",
-    "@types/classnames": "^2.2.8",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "^6.0.0",
     "typescript": "^3.4.5"
   }
 }

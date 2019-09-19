@@ -1,6 +1,6 @@
 import * as React from "react";
 import {FC, useEffect, useRef, useState} from "react";
-import * as classNames from "classnames";
+import classNames from "classnames";
 import {IProps} from "../../Core/props";
 import {Orientation} from "../../Utils/variables";
 import {LAYOUT, LAYOUT_HANDLER, LAYOUT_HORIZONTAL, LAYOUT_VERTICAL} from "./common/Classes";

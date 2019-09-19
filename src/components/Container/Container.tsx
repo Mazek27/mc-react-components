@@ -19,7 +19,7 @@ const Container : FunctionComponent<IContainerProps> = (props) => {
 }
 
 function hasContainerChildren(children : any){
-  return children && children instanceof Array && children.some((element:any) => element.type.displayName === 'Container')
+  return children && children instanceof Array && children.some((element:any) => element.type && element.type.displayName === 'Container')
 }
 
 Container.displayName = "Container";
